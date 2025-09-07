@@ -10,7 +10,7 @@ public class Main {
 
         if( a>=1.0 && b>=1.0){
             System.out.println("High");
-        } else if( a>=1.0 && b>=1.0){
+        } else if( a>=0.5 && b>=0.5){
             System.out.println("Middle");
         }
         else {

@@ -32,10 +32,15 @@ public class Main {
         // i는 B가 등장한 인덱스
         for (int i = 0; i < idxCnt; i ++){
             // j는 B가 등장한 인덱스에 하나씩 증가시키는 용도
-            for (int j = 0; j < sizeB; j ++){
+            for (int j = 0; j < sizeA-idx[i]; j ++){
                 // a[idx1 + 0] == b[0]
                 // a[idx1 + 1] == b[1]...
                 // System.out.println("a[i+j]: " + a[idx[i]+j] + " b[j]: " + b[j]);
+                
+                // out of bound 인덱스 처리.. 다음 인덱스로 이동
+                if(idx[i]+j >= sizeA || j >= sizeB){
+                    break;
+                }
                 if( a[idx[i]+j] != b[j]) {
                     break;
                 }

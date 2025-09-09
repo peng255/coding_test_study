@@ -15,19 +15,19 @@ public class Main {
         int a = sc.nextInt();
         int b = sc.nextInt();
         // Please write your code here.
-        int max = a>b ? a : b;
-        int min = a<b ? a : b;
 
-        IntWrapper maxWrapper = new IntWrapper(max);
-        IntWrapper minWrapper = new IntWrapper(min);
-        modify(maxWrapper, minWrapper);
+        IntWrapper aWrapper = new IntWrapper(a);
+        IntWrapper bWrapper = new IntWrapper(b);
+        modify(aWrapper, bWrapper);
 
-        System.out.print(minWrapper.value + " " + maxWrapper.value);
+        System.out.print(aWrapper.value + " " + bWrapper.value);
         
 
     }
 
-    public static void modify(IntWrapper max, IntWrapper min){
+    public static void modify(IntWrapper a, IntWrapper b){
+        IntWrapper max = a.value > b.value ? a : b;
+        IntWrapper min = a.value < b.value ? a : b;
         max.value += 25;
         min.value *= 2;
     }

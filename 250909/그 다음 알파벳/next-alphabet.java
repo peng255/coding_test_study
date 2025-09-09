@@ -6,7 +6,7 @@ public class Main {
         char c = (new Scanner(System.in)).next().charAt(0);
 
         if(c=='z'){
-            System.out.print('z');
+            System.out.print('a');
         } else {
             System.out.print((char)(c + 1));
         }

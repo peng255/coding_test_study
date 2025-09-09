@@ -11,8 +11,8 @@ public class Main {
         int sum = 0;
         for (int i = 0; i < s.length(); i ++){
             // char -> String 바꿀 때 String.valueOf(_) 쓰기
-            String letter = String.valueOf(s.charAt(i))
-            sum += Integer.parseInt();
+            String letter = String.valueOf(s.charAt(i));
+            sum += Integer.parseInt(letter);
         }
 
         System.out.print(sum);

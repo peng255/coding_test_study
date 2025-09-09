@@ -7,9 +7,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-
         arr = new int[n];
-
         for (int i = 0; i < n; i ++){
             arr[i] = sc.nextInt();
         }
@@ -17,6 +15,9 @@ public class Main {
         // 전체 범위에서 최댓값 인덱스 구하기
         int end = find(n);
         System.out.print(end+1 + " ");
+        if (end == 0){
+            return;
+        }
 
         while(true){
             

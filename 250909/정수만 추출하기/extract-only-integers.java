@@ -8,8 +8,10 @@ public class Main {
         String s1 = sc.next();
         String s2 = sc.next();
 
-        int idx1 = -1;
-        int idx2 = -1;
+        // 숫자 아닌 문자가 하나도 없으면 substring 끝까지 추출하게
+        // s.length() - 1로 설정해야 한다... 대충 -1같은건 안됨
+        int idx1 = s1.length()-1;
+        int idx2 = s2.length()-1;
 
         for (int i = 0; i < s1.length(); i ++){
             // 숫자 아스키 코드가 아닌 char를 만나면 기록하고 break

@@ -1,20 +1,18 @@
 import java.util.Scanner;
 
+class Bomb {
+    String code;
+    char color;
+    int second;
 
+    public Bomb(String code, char color, int second){
+        this.code = code;
+        this.color = color;
+        this.second = second;
+    }
+}
 
 public class Main {
-
-    public static class Bomb {
-        String code;
-        char color;
-        int second;
-
-        public Bomb(String code, char color, int second){
-            this.code = code;
-            this.color = color;
-            this.second = second;
-        }
-    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

@@ -16,7 +16,8 @@ public class Main {
         int idxcnt = 1;
         int len = t.length();
         for (int i = 0; i < n; i ++){
-            if ( (words[i].substring(0,len)).equals(t) ){
+            if ( words[i].length() >= len &&
+                (words[i].substring(0,len)).equals(t) ){
                 if (idxcnt == k){
                     System.out.print(words[i]);
                     return;

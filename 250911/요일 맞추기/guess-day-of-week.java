@@ -7,6 +7,17 @@ public class Main {
         int m2 = sc.nextInt();
         int d2 = sc.nextInt();
         
+        // int tempM, tempD;
+        // if ( m1 > m2 || (m1 == m2 && d1 > d2)){
+        //     tempM = m1;
+        //     tempD = d1;
+        //     m1 = m2;
+        //     d1 = d2;
+        //     m2 = tempM;
+        //     d2 = tempD;
+        // }
+        // System.out.printf("%d %d %d %d\n", m1, d1, m2, d2);
+
         int[] days = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
         // 2011. 01. 01을 기준으로 2011.m1.d1.까지의 날짜 수 구하기
@@ -25,7 +36,9 @@ public class Main {
         String[] yoil = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
         int diff = cnt2 - cnt1;
         if (diff < 0){
-            diff += 7;
+            while(diff<0){
+                diff += 7;
+            }
         }
         
         System.out.println(yoil[ diff%7 ]);

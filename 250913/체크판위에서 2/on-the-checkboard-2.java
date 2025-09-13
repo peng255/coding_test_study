@@ -21,8 +21,8 @@ public class Main {
             for (int j = 1; j <= (C-3); j ++){
                 for (int k = i+1; k <=(R-2); k++){
                     for(int m = j+1; m <=(C-2); m++){
-                        // 두 점프지점의 
-                        if(grid[i][j] != grid[k][m]){
+                        // 두 점프지점의 색이 다를때만 셈
+                        if((grid[i][j] != grid[0][0]) && (grid[k][m] != grid[R-1][C-1]) && (grid[i][j] != grid[k][m])){
                             cnt++;
                         }
                     }

@@ -20,7 +20,7 @@ public class Main {
         // i번째 개발자 제외
         for(int i = 0; i < n; i++){
             // i번째 제외한 개발자들 근무시간 표시
-            int[] time = new int[1001]; // 제외하는 경우마다 근무기록 초기화
+            int[] time = new int[1001]; // 제외하는 경우마다 근무기록 초기화 ★★★
             for(int j = 0; j < n; j++){
                 if(j==i) continue;
                 for (int k = start[j]; k < end[j]; k++){

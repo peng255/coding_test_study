@@ -21,6 +21,10 @@ public class Main {
             unread[i] = sc.nextInt();
         }
 
+        if(unread[p-1] == 0){
+            return;
+        }
+
         for(int i = p-1; i < m; i ++){
             developers[sender[i]-'A'] ++;
         }

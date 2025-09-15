@@ -27,10 +27,11 @@ public class Main {
 
         for(int i = 0; i < m; i ++){
             // p번째 이상이거나 .. p번째와 안읽음수가 같다면 읽엇음
-            if(i>=(p-i) || unread[p-1]==unread[i])
+            if(i>=(p-1) || unread[p-1]==unread[i])
                 developers[sender[i]-'A'] ++;
         }
 
+        // System.out.println(Arrays.toString(developers));
         for(int i = 0; i < n; i ++){
             if(developers[i] == 0){
                 System.out.print((char)('A'+i) + " ");

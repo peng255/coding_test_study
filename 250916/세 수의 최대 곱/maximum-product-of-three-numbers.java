@@ -20,7 +20,7 @@ public class Main {
         }
 
         Arrays.sort(arr);
-        // System.out.print(Arrays.toString(arr));
+        // System.out.println(Arrays.toString(arr));
 
         int lastNeg = -1;
         int fstPos = -1;
@@ -41,6 +41,7 @@ public class Main {
                     break;
             }
         }
+        // System.out.printf("fstpos %d lastneg %d\n", fstPos, lastNeg);
         
         int result1, result2, result3, result4, result5;
         result1 = Integer.MIN_VALUE;
@@ -54,13 +55,13 @@ public class Main {
             // 제일큰(+) * 절댓값 제일큰 음수 2개
             result2 = arr[n-1] * arr[0] * arr[1];
         } 
-        if(zeroCnt >= 0){
+        if(zeroCnt > 0){
             // System.out.printf("case3\n");
             result3 = 0;
         } 
         if(posCnt==2 && negCnt==1){
-            // System.out.printf("case4\n");
-            result4 = arr[fstPos] * arr[fstPos+1] * arr[negCnt];
+            // System.out.printf("%d %d %d\n", arr[fstPos], arr[fstPos+1], arr[lastNeg]);
+            result4 = arr[fstPos] * arr[fstPos+1] * arr[lastNeg];
         } 
         if(negCnt >= 3) { // 절댓값 젤 작은 음수 3개
             // System.out.printf("case5\n");

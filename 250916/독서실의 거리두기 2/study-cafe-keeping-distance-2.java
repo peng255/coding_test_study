@@ -9,16 +9,23 @@ public class Main {
         int maxDistance = 0;
         int distCnt = 0;
         int maxEnd = -1;
+        int cntOne=0;
         for(int i = 0; i < n; i++){
             seats[i] = s.charAt(i);
 
             distCnt++; // 거리 먼저 더한 후 max와 비교
             if(seats[i]=='1'){
-                if(distCnt > maxDistance){
-                    maxDistance = distCnt;
-                    maxEnd = i;
+                cntOne++;
+                if(cntOne==1){// 처음만난 1은 다시 거리 초기화
+                    distCnt=0;
+                    continue;
+                } else {
+                    if(distCnt > maxDistance){
+                        maxDistance = distCnt;
+                        maxEnd = i;
+                    }
+                    distCnt = 0; // distCnt 초기화
                 }
-                distCnt = 0; // distCnt 초기화
             }
         }
         // -> 중간에서 제일 먼 거리와 그 끝점 구함
@@ -62,10 +69,17 @@ public class Main {
         // System.out.println(Arrays.toString(seats));
         int minDistance = n;
         int minDistCnt = 0;
+        cntOne = 0; // 1이 처음 나온 순간부터 세야함..맨왼쪽에 000이면 그 거리는 필요x
         for(int i = 0; i < n; i ++){
             minDistCnt ++;
+            if(seats[i]=='1'){
+                cntOne++;
+            }
+            if(seats[i]=='1' && cntOne==1) 
+                minDistCnt=0; //첫 1 초기화
+
             // 첫 자리는 거리 세는거에서 제외해야 최소거리 잘 계산됨!
-            if(seats[i]=='1' && i!=0){
+            if(seats[i]=='1' && cntOne>=2){ //지금 두번째 등장한 1일때
                 // System.out.printf("minDistcnt %d minDistance %d\n", minDistCnt, minDistance);
                 if(minDistCnt < minDistance){
                     minDistance = minDistCnt;

@@ -27,13 +27,13 @@ public class Main {
 
         int nx, ny;
 
-        do {
+        while(true){
             nx = currX + dx[dir];
             ny = currY + dy[dir];
             // 현재 방향 앞이 벽인 동안에 계속 회전
             int breakCnt = 0;
             while(inRange(nx, ny) && maze[nx][ny] == '#'){
-                if(breakCnt==4){ // 제자리에서 계속 돌면 -1 출력하고 종료
+                if(breakCnt==5){ // 제자리에서 계속 돌면 -1 출력하고 종료
                     System.out.println(-1);
                     System.exit(0);
                 }
@@ -71,15 +71,16 @@ public class Main {
                 }
             }
 
-        } while(currX!=startX || currY!=startY);
+            if(currX == startX && currY == startY && dir == 0){
+                System.out.print(-1);
+                System.exit(0);
+            }
+
+        } 
         // 한번 실행 후 다시 시작지점으로 돌아온다면 탈출불가임을 인식하고 while 멈춤
         // 탈출할 수 있다면 시작지점으로 돌아오기 전에 break할 수 있다
-        if(currX==startX && currY==startY){
-            System.out.print(-1);
-            return;
-        }
 
-        System.out.print(totalTime);
+        // System.out.print(totalTime);
 
     }
 

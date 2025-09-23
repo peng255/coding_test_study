@@ -71,7 +71,7 @@ public class Main {
                 }
             }
 
-            if(currX == startX && currY == startY && dir == 0){
+            if(currX == startX && currY == startY && (dir == 0 || dir == 1)){
                 System.out.print(-1);
                 System.exit(0);
             }

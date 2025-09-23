@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static int[][] grid;
@@ -117,6 +117,21 @@ public class Main {
             }
         }
         char dir = sc.next().charAt(0);
+
+        // 4044 인데 왼쪽으로 밀면 8400되게 하기 위해서..
+        // 먼저 4440을 만들고 합치자
+        push(dir);
+
+        for(int i = 0; i < n; i ++){
+            for(int j = 0; j < n; j ++){
+                grid[i][j] = temp[i][j];
+
+                // 썼던 temp 칸은 다시 0으로 초기화해줘야 다음 push에서 제대로 나옴!!
+                temp[i][j] = 0; 
+                // System.out.print(grid[i][j] + " ");
+            }
+            // System.out.println();
+        }
 
         // dir 방향으로 같은 숫자 2개씩 합침. 0 남음
         merge(dir);

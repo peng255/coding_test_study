@@ -41,6 +41,12 @@ public class Main {
                 breakCnt ++;
                 nx = currX + dx[dir]; // 이동할 좌표 다시 구함
                 ny = currY + dy[dir]; 
+
+                // 방향 한번이상 바꿨는데 시작점이고 오른쪽 dir이면 종료
+                if(currX==startX && currY==startY && dir==0){
+                    System.out.println(-1);
+                    System.exit(0);
+                }
             } // 빠져나오면 이제 dir방향 앞에 벽 없음
             // System.out.printf("다음좌표 nx %d ny %d\n", nx, ny);
 

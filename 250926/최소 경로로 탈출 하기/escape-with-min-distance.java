@@ -40,6 +40,11 @@ public class Main {
 		
 		BFS();
 		
+        // 방문 안햇을 경우 -1프린트
+        if(visited[n-1][m-1]==0){
+            System.out.println(-1);
+            return;
+        }
 		System.out.println(distanceMap[n-1][m-1]);
 	}
 	

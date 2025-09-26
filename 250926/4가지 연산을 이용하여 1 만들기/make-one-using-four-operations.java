@@ -14,6 +14,7 @@ public class Main {
 		dist = new int[startNum + 2]; // 0 1 .. n n+1까지 인덱스 있게 만듦
 		visited = new int[startNum + 2];
 		
+        visited[startNum] = 1; // 시작점 visited 항상 빼먹지 말기 !!!
 		q.add(startNum);
 		
 		BFS();
@@ -43,6 +44,11 @@ public class Main {
 				// 범위 안넘어가고 처음 나오는 숫자면 dist 기록하고, visited 표시하고, q에 넣음
 				dist[newNum] = dist[curr] + 1;
 				visited[newNum] = 1;
+
+                // 만약 새로 계산한 다음 숫자가 1이면 더 볼 필요x return
+                if(newNum == 1){
+                    return;
+                }
 				
 				q.add(newNum);
 			}

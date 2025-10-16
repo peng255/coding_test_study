@@ -10,6 +10,11 @@ int main() {
     cin >> n; // 격자 크기
     cin >> m; // m개 이상의 동일한 원소가 나와야 함
 
+    if(n==1){
+        cout << 2;
+        return 0;
+    }
+
     vector<vector<int>> arr(n, vector<int>(n)); // n*n 배열 0으로 초기화
 
     for(int i = 0; i < n; i ++){

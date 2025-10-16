@@ -26,9 +26,13 @@ int main() {
             } else {
                 same++;
             }
+            if(same >= m){
+                cnt++;
+                same = 1;
+                break; // 다음 가로줄로 이동
+            }
         }
-        if(same >= m)
-            cnt++;
+        
     }
 
     for(int j = 0 ; j < n; j++){
@@ -38,9 +42,12 @@ int main() {
             } else {
                 same++;
             }
+            if(same >= m){
+                cnt++;
+                same = 1;
+                break; // 다음 세로줄로 이동
+            }
         }
-        if(same >= m)
-            cnt++;
     }
 
     cout << cnt;
